@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 // import {postRef} from '../firebase';
-// import {connect} from 'react-redux';
+import {connect} from 'react-redux';
 import {firebaseApp} from '../firebase';
 import {Link} from 'react-router';
 import AddComments from './AddComments';
 import CommentList from './CommentList';
-//import ReplyList from './ReplyList';
 import EditPosts from './EditPosts';
+import {logUser} from '../actions';
 
 class PostDetail extends Component{
 		constructor(props){
@@ -30,15 +30,25 @@ class PostDetail extends Component{
 		})
 	}
 
+	editPosts(email,serverKey, posttitle){
+		const mail= this.props.user.email;
+		if(email===mail){
+			return(
+				<EditPosts serverKey={serverKey} email={email} posttitle={posttitle}/>
+				)
+			
+		}
+	}
 	
 	render(){
 		
 		
-
+		console.log('this.props', this.props);
 		const {email,posttitle}=this.state.posts;
 		
 		const serverKey=this.props.params.id;
 		
+
 
 		//this.props.actioncreator(serverKey);////we can use action creator here and pass it in here
 		
@@ -49,7 +59,9 @@ class PostDetail extends Component{
 				<div><em>{email}</em></div>
 				<div><strong>{posttitle}</strong></div>
 				<div>{serverKey}</div>
-				<EditPosts serverKey={serverKey} email={email} posttitle={posttitle}/>
+				<div>
+					{this.editPosts(email,serverKey, posttitle)}
+				</div>
 				<AddComments serverKey={serverKey}/>	{/*serverKey passed as props to AddComments component*/}
 				<hr/>
 				<CommentList PostKey={serverKey} />
@@ -62,5 +74,10 @@ class PostDetail extends Component{
 	}
 }
 
-
-export default PostDetail;
+function mapStateToProps(state){
+	const {user} = state;
+	return {
+		user
+	}
+}
+export default connect(mapStateToProps, null)(PostDetail);
