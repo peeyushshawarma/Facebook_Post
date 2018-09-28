@@ -43,7 +43,7 @@ class PostDetail extends Component{
 	render(){
 		
 		
-		console.log('this.props', this.props);
+		//console.log('this.props', this.props);
 		const {email,posttitle}=this.state.posts;
 		
 		const serverKey=this.props.params.id;

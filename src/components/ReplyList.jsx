@@ -13,7 +13,7 @@ class ReplyList extends Component{
 			let replyArray=[];
 			snap.forEach(eachReply=>{
 				const {commentKey}= eachReply.val();
-				const {Commentkey} = this.props;
+				//const {Commentkey} = this.props;
 				// if(commentKey===Commentkey){
 				const {email, Reply}= eachReply.val();
 				
@@ -31,7 +31,7 @@ class ReplyList extends Component{
 		//console.log('reply aane ke baad',this.props);
 		//this.props.Commentkey===this.props.reply.commentKey
 		const {Commentkey} =this.props;
-		const {commentKey} =this.props.reply;
+		//const {commentKey} =this.props.reply;
 		let replies=_.filter(this.props.reply, {commentKey: Commentkey});
 			
 		//console.log('replies', replies);

@@ -5,11 +5,11 @@ import {postRef} from '../firebase';
 class DeletePostButton extends Component{
 
 	deleteItem(e){
-		console.log('this.props', this.props);
+		//console.log('this.props', this.props);
 	 	  const{email,posttitle,serverKey} =this.props;
 		 	
 		  postRef.child(serverKey).remove()
-		  console.log('post removed');	//to remove the particular post from post list
+		  //console.log('post removed');	//to remove the particular post from post list
 	}
 	render(){
 
