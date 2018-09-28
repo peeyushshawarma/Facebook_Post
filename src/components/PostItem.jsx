@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-import {postRef} from '../firebase';
 import {connect} from 'react-redux';
 import DeletePostButton from './DeletePostButton';
 //import EditPostButton from './EditPostButton';
@@ -29,8 +28,7 @@ class PostItem extends Component{
       //var editButton;
      if(usermail===email){
         deleteButton=<DeletePostButton serverKey={serverKey} email={email} posttitle={posttitle}/>
-        {/*editButton=<EditPostButton serverKey={serverKey} posttitle={posttitle}/>*/}  //serverKey passed as a prop to EditPostButton component
-         }
+        }
 
 		return(
 			<div>

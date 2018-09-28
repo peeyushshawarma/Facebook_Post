@@ -5,7 +5,7 @@ import ReplyList from './ReplyList';
 class ReplyItem extends Component{
 	render(){
 		//console.log('reply of thisarticle', this.props.reply);
-		const {email,Reply,commentKey,replyKey }= this.props.reply;
+		const {email,Reply,replyKey }= this.props.reply;
 		return(
 			<div style={{marginLeft:'20px'}}>
 				<em>{email}</em>

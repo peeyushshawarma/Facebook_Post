@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import {firebaseApp} from '../firebase';
 import {postRef} from '../firebase';
 
 class EditPosts extends Component{
@@ -18,9 +17,9 @@ class EditPosts extends Component{
 	   });
 	}
 	render(){
-		const {posttitle} = this.props;
+		//const {posttitle} = this.props;
 		const {serverKey} =this.props;
-		const {email} =this.props;
+		//const {email} =this.props;
 		//console.log('this.state EditPosts', this.state);
 		//console.log('this.props EditPosts', this.props);
 		return(

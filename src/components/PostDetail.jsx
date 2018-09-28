@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-// import {postRef} from '../firebase';
 import {connect} from 'react-redux';
 import {firebaseApp} from '../firebase';
 import {Link} from 'react-router';
 import AddComments from './AddComments';
 import CommentList from './CommentList';
 import EditPosts from './EditPosts';
-import {logUser} from '../actions';
 
 class PostDetail extends Component{
 		constructor(props){
